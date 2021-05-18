@@ -4,4 +4,21 @@ import Row from "../components/Row";
 import Column from "../components/Column";
 import Card from "../components/Card";
 import Groupbtn from "../components/Groupbtn";
-import Navbar from "../components/Navbar";
+
+function Results() {
+    return (
+        <div>
+            <Container>
+                <Row>
+                    <Column size="col-4">
+                        <Card />
+                        <Groupbtn />
+                    </Column>
+
+                </Row>
+            </Container>
+        </div>
+    );
+}
+
+export default Results;
