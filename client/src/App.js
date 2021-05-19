@@ -8,8 +8,8 @@ import Scanner from "./pages/Scanner";
 function App() {
   return (
     // <Main />
-    // <Results />
-    <Scanner />
+    <Results />
+    // <Scanner />
 
     // <Router>
     //   <div>
