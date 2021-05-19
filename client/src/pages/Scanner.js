@@ -1,7 +1,7 @@
 import Container from "../components/Container"
 import React, { Component, Fragment } from 'react'
 import Quagga from 'quagga'
-import Navbar from "../components/Navbar";
+
 
 class Scanner extends Component {
 
