@@ -1,6 +1,7 @@
-
+import Container from "../components/Container"
 import React, { Component, Fragment } from 'react'
 import Quagga from 'quagga'
+import Navbar from "../components/Navbar";
 
 class Scanner extends Component {
 
@@ -48,9 +49,12 @@ class Scanner extends Component {
 
   render() {
     return (
+      <Container>
+ 
       <Fragment>
             <div id="barcodeScan"></div>
       </Fragment>
+      </Container>
     )
   }
 }

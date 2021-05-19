@@ -9,7 +9,7 @@ function Main() {
     return (
         <div>
             <Container>
-                <Navbar />
+                {/* <Navbar /> */}
                 <Row>
                     <Column size="col-4">
                         <Scanbtn />
