@@ -1,0 +1,43 @@
+<ion-header>
+    <ion-toolbar color="primary">
+        <ion-title>
+            Ionic Barcode Scanner 1
+        </ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <!-- is the (click =) ion specific or is that another shorthand for an on click function -->
+    <ion-button expand="full" (click)="startScan()">
+        <!-- what does slot represent? -->
+        <io-icon slot="start" name="qr-scanner"></io-icon>
+        Start Scan
+    </ion-button>
+
+    <ion-button expand="full" (click)="reset()" color="warning" *ngIF="scanResult">
+        <io-icon slot="start" name="refresh"></io-icon>
+        Reset
+    </ion-button>
+
+    <!-- sets up preview screen -->
+    <video #video [hidden]="!scanActive" width="100%"></video>
+
+    <ion-button expand="full" (click)="stopScan()" color="danger" *ngIF="scanActive">
+        <io-icon slot="start" name="close"></io-icon>
+        Stop Scan
+    </ion-button>
+
+
+    <!-- This will be replaced with react card component -->
+    <ion-card *ngIF="scanResult">
+        <ion-card-header>
+            <ion-card-title>
+                QR Code
+            </ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+            <!-- was designed with MVC / Handlebars in mind. Will be handled in results component -->
+            {{scanResult}}
+        </ion-card-content>
+    </ion-card>
+</ion-content>
