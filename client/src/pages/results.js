@@ -10,11 +10,13 @@ function Results() {
     return (
         <div>
             <Container>
-         
+                <Row>
+                    <Groupbtn />
+                </Row>
                 <Row>
                     <Column size="col-4">
                         <Card />
-                        <Groupbtn />
+
                     </Column>
 
                 </Row>

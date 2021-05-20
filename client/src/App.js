@@ -16,7 +16,7 @@ function App() {
           <Route exact path="/" component={Main} />
           <Route exact path="/results" component={Results} />
           <Route exact path="/scanner" component={Scanner} />
-                </Switch>
+        </Switch>
       </div>
     </Router>
 
