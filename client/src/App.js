@@ -5,19 +5,18 @@ import Main from "./pages/main";
 import Results from "./pages/results";
 import Scanner from "./pages/Scanner";
 import Nav from "./components/Navbar";
-
+import History from "./pages/history";
 
 function App() {
   return (
     <Router>
-      <div>
         <Nav />
         <Switch>
           <Route exact path="/" component={Main} />
           <Route exact path="/results" component={Results} />
           <Route exact path="/scanner" component={Scanner} />
+          <Route exact path="/history" component={History} />
         </Switch>
-      </div>
     </Router>
 
     // <Main />
