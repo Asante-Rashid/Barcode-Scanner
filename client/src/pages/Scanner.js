@@ -5,13 +5,13 @@ import Quagga from 'quagga'
 
 class Scanner extends Component {
 
-  constructor(props){
-    super(props);
-    this.state ={
-      nocamera: false
-    }
-    this.onDetect = this.onDetect.bind(this)
-  }
+  // constructor(props){
+  //   super(props);
+  //   this.state ={
+  //     nocamera: false
+  //   }
+  //   this.onDetect = this.onDetect.bind(this)
+  // }
 
   
   componentDidMount(){
@@ -42,9 +42,9 @@ class Scanner extends Component {
 
   onDetect(res){
     // console.log(res.codeResult.code)
-    Quagga.stop()
-    Quagga.offProcessed()
-    this.props.onBarcodeDetect(res.codeResult.code)
+    // Quagga.stop()
+    // Quagga.offProcessed()
+    console.log(res.codeResult.code)
   }
 
   render() {
