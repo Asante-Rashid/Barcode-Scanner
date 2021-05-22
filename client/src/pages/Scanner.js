@@ -5,16 +5,14 @@ import Quagga from 'quagga'
 
 class Scanner extends Component {
 
-  // constructor(props){
-  //   super(props);
-  //   this.state ={
-  //     nocamera: false
-  //   }
-  //   this.onDetect = this.onDetect.bind(this)
-  // }
+  state = {
 
-  
-  componentDidMount(){
+    nocamera: false
+  }
+
+
+
+  componentDidMount() {
     Quagga.init({
       inputStream: {
         name: "Live",
@@ -32,28 +30,28 @@ class Scanner extends Component {
       }
     }, function (err) {
       if (err) {
-        return 
+        return
       }
       Quagga.start()
     })
     Quagga.onDetected(this.onDetect)
-    
+
   }
 
-  onDetect(res){
+  onDetect(res) {
     // console.log(res.codeResult.code)
     // Quagga.stop()
     // Quagga.offProcessed()
-    console.log(res.codeResult.code)
+    console.log(res.codeResult)
   }
 
   render() {
     return (
       <Container>
- 
-      <Fragment>
-            <div id="barcodeScan"></div>
-      </Fragment>
+
+        <Fragment>
+          <div id="barcodeScan"></div>
+        </Fragment>
       </Container>
     )
   }
