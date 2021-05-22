@@ -16,5 +16,9 @@ export default {
   
   saveItem: function(barcodeData) {
     return axios.post("/api/history", barcodeData);
+  },
+
+  googleSearch: function(query) {
+    return axios.get("/api/google", { params: { q: query } });
   }
 };
