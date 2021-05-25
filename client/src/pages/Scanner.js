@@ -6,11 +6,9 @@ import Quagga from 'quagga'
 class Scanner extends Component {
 
   state = {
-
+    barcode: this.onDetect,
     nocamera: false
   }
-
-
 
   componentDidMount() {
     Quagga.init({
