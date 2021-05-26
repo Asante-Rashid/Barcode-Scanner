@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import Container from "../components/Container";
 import Row from "../components/Row";
+import Groupbtn from "../components/Groupbtn";
 
 // import Jumbotron from "../components/Jumbotron";
 import API from "../utils/API";
@@ -20,6 +21,9 @@ function Detail(props) {
   return (
     <Container fluid>
       <Row>
+        <Groupbtn />
+      </Row>
+      <Row>
         <h1>
           {item.Name} by {item.UPC}
         </h1>
@@ -33,7 +37,7 @@ function Detail(props) {
         </article>
       </Row>
       <Row>
-        <Link to="/">← Back to Authors</Link>
+        <Link to="/history">← Back to history</Link>
       </Row>
     </Container>
   );
