@@ -14,15 +14,16 @@ function History() {
     function loadHistory() {
         API.getHistory()
             .then(res =>
-                setHistory(res.data)
+                console.log(res.data)
             )
             .catch(err => console.log(err));
+            console.log(history)
     };
 
     return (
         <Container>
             <Row>
-                {/* {history.length ? (
+                {history.length ? (
                     <List>
                         {history.map(item => {
                             return (
@@ -36,9 +37,9 @@ function History() {
                             );
                         })}
                     </List>
-                ) : ( */}
+                ) : (
                     <h3>History not found. Start scanning!</h3>
-                {/* )} */}
+                 )}  
             </Row>
         </Container>
     );

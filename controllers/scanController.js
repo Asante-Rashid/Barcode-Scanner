@@ -1,4 +1,4 @@
-const { Rss } = require("react-bootstrap-icons");
+// const { Rss } = require("react-bootstrap-icons");
 const db = require("../models");
 
 module.exports = {

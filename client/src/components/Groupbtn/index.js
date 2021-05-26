@@ -18,7 +18,7 @@ function Groupbtn(props) {
     };
 
     return (
-        <div class="row px-auto py-2 text-center">
+        <div className="row px-auto py-2 text-center">
             <div className="btn-group btn-group-lg" role="group" aria-label="Basic example">
                 <div className="col">
                     {/* <a href="https://www.google.com"> */}

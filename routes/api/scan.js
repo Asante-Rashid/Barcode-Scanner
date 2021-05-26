@@ -4,8 +4,8 @@ const scanController = require("../../controllers/scanController");
 // Matches with /api/scan
 router.route("/")
 .get(scanController.findAll)
-.post(scanController.create)
-.
+.post(scanController.create);
+
 // Matches with /api/scan/:id
 router
 .route("/:id")
