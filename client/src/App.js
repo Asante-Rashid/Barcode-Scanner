@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 // import { BrowserRouter as Router, Route } from "react-router-dom";
 import Main from "./pages/main";
 import Results from "./pages/results";
+import Detail from "./pages/Detail";
 import Scanner from "./pages/Scanner";
 import Nav from "./components/Navbar";
 import History from "./pages/history";
@@ -16,6 +17,7 @@ function App() {
           <Route exact path="/results" component={Results} />
           <Route exact path="/scanner" component={Scanner} />
           <Route exact path="/history" component={History} />
+          <Route exact path="/details/:id" component={Detail} />
         </Switch>
     </Router>
 

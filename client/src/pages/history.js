@@ -28,7 +28,7 @@ function History() {
                         {history.map(item => {
                             return (
                                 <ListItem key={item._id}>
-                                    <a href={"/history/" + item._id}>
+                                    <a href={"/details/" + item._id}>
                                         <strong>
                                             {item.Name} UPC: {item.UPC}
                                         </strong>
