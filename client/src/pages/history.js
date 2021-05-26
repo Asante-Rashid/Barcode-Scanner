@@ -14,7 +14,7 @@ function History() {
     function loadHistory() {
         API.getHistory()
             .then(res =>
-                console.log(res.data)
+                setHistory(res.data)
             )
             .catch(err => console.log(err));
             console.log(history)
@@ -28,9 +28,9 @@ function History() {
                         {history.map(item => {
                             return (
                                 <ListItem key={item._id}>
-                                    <a href={"/items/" + item._id}>
+                                    <a href={"/history/" + item._id}>
                                         <strong>
-                                            {item.title} by {item.upc}
+                                            {item.Name} UPC: {item.UPC}
                                         </strong>
                                     </a>
                                 </ListItem>
