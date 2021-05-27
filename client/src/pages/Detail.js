@@ -34,6 +34,7 @@ function Detail(props) {
           <p>
             {item.Description}
           </p>
+          <img src = {item.Image} alt = {item.Name} />
         </article>
       </Row>
       <Row>
