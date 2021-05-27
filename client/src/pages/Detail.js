@@ -37,9 +37,9 @@ function Detail(props) {
               />
 
             </div>
-            <img src={item.Image} className="card-img-top" alt={item.Name} />
             <div className="card-body">
               <h5 className="card-title">{item.Name}</h5>
+            <img src={item.Image} className="card-img-top p-3" alt={item.Name} />
               <p className="card-text">{item.Description}</p>
             </div>
             <div className="card-body">
