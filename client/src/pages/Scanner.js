@@ -59,13 +59,25 @@ class Scanner extends Component {
     // console.log(res)
     const code = res.codeResult.code
     const code2 = res.codeResult.code
-    console.log(API.getBarcode(code))
     if (code === code2) {
       Quagga.stop()
     }
+    console.log(code)
+    API.getBarcode(code)
+      .then(res => {
+
+        const scan = res.data[0];
+        console.log(scan);
+      })
+    API.saveItem({
+      Name: res.data[0].title,
+      UPC: code,
+      Image: res.data[0].imageUrl,
+      Description: res.data[0].subtitle
+    })
     // this.setState({results: res.codeResult.code})
     // console.log(this.state.results)
-  } 
+  }
 
   render() {
     return (
