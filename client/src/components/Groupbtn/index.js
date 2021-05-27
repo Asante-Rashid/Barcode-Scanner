@@ -7,46 +7,51 @@ function Groupbtn(props) {
     const [googleItems, setGoogleRes] = useState([]);
     const [googlePriceSearch, setGooglePriceSearch] = useState("");
     const [googleStoreLink, setGoogleLink] = useState("");
+    const [amazonStoreLink, setAmazonLink] = useState("");
+    const [ebayStoreLink, setEbayLink] = useState("");
 
     useEffect(() => {
     // const handleGoogleSearch = event => {
     //     event.preventDefault();
-        const value = "ipod";
-        setGooglePriceSearch(value);
-        API.googleSearch(googlePriceSearch)
-            .then(res => setGoogleRes(res.data))
-            .catch(err => console.log(err));
-        setGoogleLink("https://www.google.com/search?q=" + value + "&tbm=shop")
+        const itemName = "AMD+RYZEN+5+3600X";
+        const itemUPC = "730143309912"
+        // setGooglePriceSearch(value);
+        // API.googleSearch(googlePriceSearch)
+        //     .then(res => setGoogleRes(res.data))
+        //     .catch(err => console.log(err));
+        setGoogleLink("https://www.google.com/search?q=" + itemUPC + "&tbm=shop")
+        setAmazonLink("https://www.amazon.com/s?k=" + itemName )
+        setEbayLink("https://www.ebay.com/sl/prelist/identify?title=" + itemUPC + "&isUid=true")
         console.log(googleStoreLink)
     }, []);
 
     return (
-        <div className="row px-auto py-2 text-center">
-            <div className="btn-group btn-group-lg" role="group" aria-label="Basic example">
-                <div className="col">
-                    <a href={googleStoreLink}>
+        <div className="row px-auto py-2 ">
+            <div className=" row btn-group btn-group-lg " role="group" aria-label="Basic example">
+                <div className="col text-center">
+                    <a href={googleStoreLink} >
                         <button
                             // onClick={handleGoogleSearch}
                             type="button"
                             className="btn btn-primary">
                             <Search className="me-2" />
-                    Search
+                    Google
                     </button>
                     </a>
                 </div>
-                <div className="col">
-                    <a href="https://www.amazon.com">
+                <div className="col text-center">
+                    <a href={amazonStoreLink}>
                         <button type="button" className="btn btn-primary">
                             <Bag className="me-2" />
-                    Buy
+                    Amazon 
                     </button>
                     </a>
                 </div>
-                <div className="col">
-                    <a href="https://www.ebay.com">
+                <div className="col text-center">
+                    <a href={ebayStoreLink}>
                         <button type="button" className="btn btn-primary">
                             <BoxSeam className="me-2" />
-                    Sell
+                    eBay
                     </button>
                     </a>
                 </div>
