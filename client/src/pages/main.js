@@ -21,7 +21,7 @@ function Main() {
                     </main>
                 <Row className="mx-auto">
                     <Column size="col-4">
-                    <a className="dropdown-item" href="/scanner">
+                    <a  href="/scanner">
                         <Scanbtn />
                         </a>
                     </Column>
