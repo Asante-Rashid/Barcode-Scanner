@@ -28,7 +28,7 @@ function History() {
             <Nav />
             <div >
                 <div>
-                <Row className="py-4">
+                <Row className="">
                     {history.length ? (
                         <List>
                             {history.map(item => {
