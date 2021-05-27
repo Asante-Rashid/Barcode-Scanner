@@ -3,6 +3,7 @@ import Container from "../components/Container";
 import { List, ListItem } from "../components/List";
 import Row from "../components/Row";
 import API from "../utils/API";
+import { BoxArrowRight} from 'react-bootstrap-icons';
 
 function History() {
     const [history, setHistory] = useState([])
@@ -17,29 +18,42 @@ function History() {
                 setHistory(res.data)
             )
             .catch(err => console.log(err));
-            console.log(history)
+        console.log(history)
     };
 
     return (
         <Container>
-            <Row>
+            <Row className="py-4">
                 {history.length ? (
                     <List>
                         {history.map(item => {
                             return (
                                 <ListItem key={item._id}>
-                                    <a href={"/details/" + item._id}>
-                                        <strong>
-                                            {item.Name} UPC: {item.UPC}
-                                        </strong>
-                                    </a>
+
+                                    <Row>
+                                        <div className="col">
+                                        <a href={"/details/" + item._id}>
+                                            <strong>
+                                                {item.Name}
+                                            </strong>
+                                        </a>
+                                        <div>
+                                            UPC: {item.UPC}
+                                        </div>
+                                        </div>
+                                        <div className="col-1 my-auto">
+                                        <a href={"/details/" + item._id}>
+                                        <BoxArrowRight  />
+                                        </a>
+                                        </div>
+                                    </Row>
                                 </ListItem>
                             );
                         })}
                     </List>
                 ) : (
                     <h3>History not found. Start scanning!</h3>
-                 )}  
+                )}
             </Row>
         </Container>
     );

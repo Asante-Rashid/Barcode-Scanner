@@ -2,11 +2,12 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import Container from "../components/Container";
 import Row from "../components/Row";
-import Col from "../components/Column";
+
 import Groupbtn from "../components/Groupbtn";
 
 // import Jumbotron from "../components/Jumbotron";
 import API from "../utils/API";
+
 
 function Detail(props) {
   const [item, setItem] = useState({})
@@ -33,7 +34,7 @@ function Detail(props) {
               />
 
             </div>
-            <img src="..." className="card-img-top" alt="..." />
+            <img src={item.Image} className="card-img-top" alt={item.Name} />
             <div className="card-body">
               <h5 className="card-title">{item.Name}</h5>
               <p className="card-text">{item.Description}</p>
