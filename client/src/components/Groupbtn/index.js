@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import API from "../../utils/API";
 import { Search, Bag, BoxSeam } from 'react-bootstrap-icons';
 
@@ -6,30 +6,33 @@ function Groupbtn(props) {
 
     const [googleItems, setGoogleRes] = useState([]);
     const [googlePriceSearch, setGooglePriceSearch] = useState("");
+    const [googleStoreLink, setGoogleLink] = useState("");
 
-    const handleGoogleSearch = event => {
-        event.preventDefault();
-        const { value } = "ipod";
+    useEffect(() => {
+    // const handleGoogleSearch = event => {
+    //     event.preventDefault();
+        const value = "ipod";
         setGooglePriceSearch(value);
         API.googleSearch(googlePriceSearch)
             .then(res => setGoogleRes(res.data))
             .catch(err => console.log(err));
-        console.log(googleItems)
-    };
+        setGoogleLink("https://www.google.com/search?q=" + value + "&tbm=shop")
+        console.log(googleStoreLink)
+    }, []);
 
     return (
         <div className="row px-auto py-2 text-center">
             <div className="btn-group btn-group-lg" role="group" aria-label="Basic example">
                 <div className="col">
-                    {/* <a href="https://www.google.com"> */}
-                    <button
-                        onClick={handleGoogleSearch}
-                        type="button"
-                        className="btn btn-primary">
-                        <Search className="me-2" />
+                    <a href={googleStoreLink}>
+                        <button
+                            // onClick={handleGoogleSearch}
+                            type="button"
+                            className="btn btn-primary">
+                            <Search className="me-2" />
                     Search
                     </button>
-                    {/* </a> */}
+                    </a>
                 </div>
                 <div className="col">
                     <a href="https://www.amazon.com">
@@ -48,6 +51,7 @@ function Groupbtn(props) {
                     </a>
                 </div>
             </div>
+
         </div>
     )
 }
