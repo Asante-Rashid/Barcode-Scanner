@@ -1,8 +1,10 @@
 import Container from "../components/Container"
-import React, { Component, Fragment} from 'react'
+import React, { Component, Fragment } from 'react'
 // , useState, useEffect
 import Quagga from 'quagga'
 import API from "../utils/API";
+import { Fullscreen} from 'react-bootstrap-icons';
+import "./scanner.css";
 
 // function Scan() {
 //   const [scan, setItem] = useState({});
@@ -83,11 +85,15 @@ class Scanner extends Component {
 
   render() {
     return (
-      <Container>
-
-        <Fragment>
-          <div id="barcodeScan"></div>
-        </Fragment>
+      <Container className="py-auto px-auto">
+        <div className="card bg-white text-white text-center py-4">
+          <Fragment >
+            <div id="barcodeScan"></div>
+          </Fragment>
+          <div className="card-img-overlay  al-fullscreen">
+          <Fullscreen  />
+          </div>
+        </div>
       </Container>
     )
   }
