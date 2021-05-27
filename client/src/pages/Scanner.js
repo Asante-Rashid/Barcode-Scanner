@@ -67,14 +67,15 @@ class Scanner extends Component {
       .then(res => {
 
         const scan = res.data[0];
+        // this.setState({results: res.data[0]})
+        API.saveItem({
+          Name: scan.title,
+          UPC: code,
+          Image: scan.imageUrl,
+          Description: scan.subtitle
+        })
         console.log(scan);
       })
-    API.saveItem({
-      Name: res.data[0].title,
-      UPC: code,
-      Image: res.data[0].imageUrl,
-      Description: res.data[0].subtitle
-    })
     // this.setState({results: res.codeResult.code})
     // console.log(this.state.results)
   }
