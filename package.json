@@ -30,6 +30,7 @@
     "quagga": "^0.12.1",
     "react-bootstrap-icons": "^1.5.0",
     "react-router-dom": "^5.2.0",
-    "react-script-tag": "^1.1.2"
+    "react-script-tag": "^1.1.2",
+    "use-state-with-callback": "^2.0.3"
   }
 }

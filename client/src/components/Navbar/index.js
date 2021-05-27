@@ -21,7 +21,7 @@ function Navbar(props) {
                          </a>
                         <ul className="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                             <li><a className="dropdown-item" href="/">Main</a></li>
-                            <li><a className="dropdown-item" href="/results">Results</a></li>
+                            {/* <li><a className="dropdown-item" href="/results">Results</a></li> */}
                             <li><a className="dropdown-item" href="/scanner">Quagga Scanner</a></li>
                             <li><a className="dropdown-item" href="/history">History</a></li>
                         </ul>

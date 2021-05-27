@@ -5,13 +5,14 @@ import Main from "./pages/main";
 import Results from "./pages/results";
 import Detail from "./pages/Detail";
 import Scanner from "./pages/Scanner";
-import Nav from "./components/Navbar";
+// import Nav from "./components/Navbar";
 import History from "./pages/history";
+import Background from "./img/BG2.jpg";
 
 function App() {
   return (
-    <Router>
-        <Nav />
+    <Router style={{ backgroundImage: `url(${Background})` }} >
+        {/* <Nav /> */}
         <Switch>
           <Route exact path="/" component={Main} />
           <Route exact path="/results" component={Results} />

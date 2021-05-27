@@ -1,0 +1,10 @@
+.al-fullscreen {
+    height:100vh;
+    margin: 0;
+
+  }
+
+  .al-background {
+    background-size: cover;
+    /* opacity: 0.5; */
+  }

@@ -2,8 +2,9 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import Container from "../components/Container";
 import Row from "../components/Row";
-
+import Nav from "../components/Navbar";
 import Groupbtn from "../components/Groupbtn";
+import Background from "../img/BG2.jpg";
 
 // import Jumbotron from "../components/Jumbotron";
 import API from "../utils/API";
@@ -21,7 +22,9 @@ function Detail(props) {
   }, [])
 
   return (
-    <Container fluid="true" >
+    <Container className="py-auto px-auto" fluid="true" >
+     <Nav />
+             <div >
 
       <Row className="py-4 mx-auto">
 
@@ -47,6 +50,7 @@ function Detail(props) {
         </div>
 
       </Row>
+      </div>
 
     </Container>
   );
