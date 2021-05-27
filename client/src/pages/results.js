@@ -1,22 +1,22 @@
-import React, { useState } from "react";
+// import React, { useState } from "react";
 import Container from "../components/Container";
 import Row from "../components/Row";
 import Column from "../components/Column";
 import Card from "../components/Card";
 import Groupbtn from "../components/Groupbtn";
-import API from "../utils/API"
+// import API from "../utils/API"
 
 
 function Results() {
 
-    const [scan, setScan] = useState([])
-    const [formObject, setFormObject] = useState({})
+    // const [scan, setScan] = useState([])
+    // const [formObject, setFormObject] = useState({})
 
-    function loadScan() {
-        API.getBarcode()
-        .then(res => setScan(res.data))
-        .catch(err => console.log(err))
-    };
+    // function loadScan() {
+    //     API.getBarcode()
+    //     .then(res => setScan(res.data))
+    //     .catch(err => console.log(err))
+    // };
 
     return (
         <div>

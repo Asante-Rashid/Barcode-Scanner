@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import Container from "../components/Container";
 import Row from "../components/Row";
+import Col from "../components/Column";
 import Groupbtn from "../components/Groupbtn";
 
 // import Jumbotron from "../components/Jumbotron";
@@ -19,26 +20,33 @@ function Detail(props) {
   }, [])
 
   return (
-    <Container fluid>
-      <Row>
-        <Groupbtn />
+    <Container fluid="true" >
+
+      <Row className="py-4 mx-auto">
+
+        <div className="col-sm-10 mx-auto">
+          <div className="card w-75 mx-auto" >
+            <div className="card-header text-center">
+              <Groupbtn
+                name={item.Name}
+                upc={item.UPC}
+              />
+
+            </div>
+            <img src="..." className="card-img-top" alt="..." />
+            <div className="card-body">
+              <h5 className="card-title">{item.Name}</h5>
+              <p className="card-text">{item.Description}</p>
+            </div>
+            <div className="card-body">
+              <Link to="/history">← Back to history</Link>
+              {/* <a href="#" class="card-link">← Back to history</a> */}
+            </div>
+          </div>
+        </div>
+
       </Row>
-      <Row>
-        <h1>
-          {item.Name} by {item.UPC}
-        </h1>
-      </Row>
-      <Row>
-        <article>
-          <h1>Synopsis</h1>
-          <p>
-            {item.Description}
-          </p>
-        </article>
-      </Row>
-      <Row>
-        <Link to="/history">← Back to history</Link>
-      </Row>
+
     </Container>
   );
 }

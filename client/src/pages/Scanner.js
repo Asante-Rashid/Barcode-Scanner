@@ -1,5 +1,6 @@
 import Container from "../components/Container"
-import React, { Component, Fragment, useState, useEffect } from 'react'
+import React, { Component, Fragment} from 'react'
+// , useState, useEffect
 import Quagga from 'quagga'
 import API from "../utils/API";
 
