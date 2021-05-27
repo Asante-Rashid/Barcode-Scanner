@@ -1,14 +1,29 @@
 import Container from "../components/Container"
-import React, { Component, Fragment } from 'react'
+import React, { Component, Fragment, useState, useEffect } from 'react'
 import Quagga from 'quagga'
+import API from "../utils/API";
 
+// function Scan() {
+//   const [scan, setItem] = useState({});
+
+//   function loadScan() {
+//     API.getBarcode()
+//       .then(res =>
+//         setItem(res.data)
+//       )
+//       .catch(err => console.log(err));
+//   };
+//   useEffect(() => {
+//     loadScan()
+//   }, [])
+// }
+// Scan()
 
 class Scanner extends Component {
-
   state = {
-    barcode: this.onDetect,
-    nocamera: false
-  }
+    results: "",
+  };
+
 
   componentDidMount() {
     Quagga.init({
@@ -38,10 +53,19 @@ class Scanner extends Component {
 
   onDetect(res) {
     // console.log(res.codeResult.code)
-    // Quagga.stop()
     // Quagga.offProcessed()
-    console.log(res.codeResult)
-  }
+    // console.log(res.codeResult.code)
+    // Scan(res)
+    // console.log(res)
+    const code = res.codeResult.code
+    const code2 = res.codeResult.code
+    console.log(API.getBarcode(code))
+    if (code === code2) {
+      Quagga.stop()
+    }
+    // this.setState({results: res.codeResult.code})
+    // console.log(this.state.results)
+  } 
 
   render() {
     return (
